@@ -11,9 +11,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Initialise terraform
+        run: terraform init 
 
       - name: Run Trivy vulnerability scanner in IaC mode
-        run: terraform init 
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
