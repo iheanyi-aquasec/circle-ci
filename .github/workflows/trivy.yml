@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Initialise terraform
-        run: terraform init ./s3-flat-noversioning | terraform init ./s3-module-and-conditional-noversioning | terraform init ./s3-module-and-conditional-versioning
+        run: terraform init ./s3-flat-noversioning ./s3-module-and-conditional-noversioning ./s3-module-and-conditional-versioning
 
       - name: Run Trivy vulnerability scanner in IaC mode
         uses: aquasecurity/trivy-action@master
